@@ -24,7 +24,7 @@ BEGIN
         (@empName,@empSalary,@empStartDate)
 END;
 
-EXEC insertSingleEmp 'John Doe', 12000, '2024-09-18';
+EXEC insertSingleEmp 'charli', 98000, '2021-07-13';
 
 SELECT * FROM employee.employee_payroll;
 
@@ -55,3 +55,14 @@ END;
 
 
 EXEC empBtwParticularDate '2024-01-01';
+
+ALTER TABLE employee.employee_payroll
+ADD Gender CHAR(1)  
+    CONSTRAINT CK_Gender CHECK (Gender IN ('M', 'F'));
+
+UPDATE 
+    employee.employee_payroll
+SET 
+    Gender ='M' 
+WHERE 
+    name = 'Bile' or name='charli';

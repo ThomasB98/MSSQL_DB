@@ -12,3 +12,17 @@ CREATE TABLE employee.employee_payroll(
     start_date DATE NOT NULL
 );
 
+CREATE PROCEDURE insertSingleEmp
+    @empName VARCHAR(50),
+    @empSalary INT,
+    @empStartDate DATE
+AS
+BEGIN 
+    INSERT INTO 
+         employee.employee_payroll(name,salary,start_date)
+    VALUES
+        (@empName,@empSalary,@empStartDate)
+END;
+
+EXEC insertSingleEmp 'John Doe', 12000, '2024-09-18';
+

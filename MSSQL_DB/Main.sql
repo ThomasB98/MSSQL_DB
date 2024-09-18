@@ -26,3 +26,4 @@ END;
 
 EXEC insertSingleEmp 'John Doe', 12000, '2024-09-18';
 
+SELECT * FROM employee.employee_payroll;

@@ -66,3 +66,16 @@ SET
     Gender ='M' 
 WHERE 
     name = 'Bile' or name='charli';
+
+
+SELECT SUM(salary) as TotalSalary,
+    AVG(salary) as AverageSalary,
+    MIN(salary) as MinSalary,
+    MAX(salary) as MaxSalary,
+    COUNT(Gender) as GenderCount
+FROM
+    employee.employee_payroll
+WHERE
+    Gender ='M'
+GROUP BY 
+    Gender;

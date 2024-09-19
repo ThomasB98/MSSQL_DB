@@ -92,5 +92,14 @@ ADD
 ALTER TABLE employee.employee_payroll
 ADD CONSTRAINT DF_Address DEFAULT 'Unknown' FOR address;
 
+ALTER TABLE
+    employee.employee_payroll
+ADD 
+    basic_pay FLOAT,
+    deductions FLOAT,
+    taxable_pay FLOAT,
+    income_tax FLOAT,
+    net_pay float;
 
 
+SELECT * FROM employee.employee_payroll;

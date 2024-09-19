@@ -101,5 +101,31 @@ ADD
     income_tax FLOAT,
     net_pay float;
 
+ALTER TABLE employee.employee_payroll
+DROP CONSTRAINT CK_PhoneNumber;
+
+SELECT * FROM employee.employee_payroll;
+
+ALTER TABLE employee.employee_payroll
+DROP CONSTRAINT DF__employee___salar__37A5467C;
+
+Alter TABLE employee.employee_payroll
+DROP COLUMN salary;
+
+ALTER TABLE employee.employee_payroll
+DROP 
+    CONSTRAINT DF_Address,
+    CONSTRAINT DF_basic_pay,
+    CONSTRAINT DF_deductions,
+    CONSTRAINT DF_taxable_pay,
+    CONSTRAINT DF_income_tax,
+    CONSTRAINT DF_net_pay;
+
+DELETE FROM employee.employee_payroll;
+
+INSERT INTO employee.employee_payroll
+(name,Gender,start_date,phone_number,address,department,basic_pay,deductions,taxable_pay,income_tax)
+VALUES
+    ('Terisa','F','2018-01-03','8669325065','pune','Sales',3000000.00,1000000.00,200000.00,500000.00);
 
 SELECT * FROM employee.employee_payroll;

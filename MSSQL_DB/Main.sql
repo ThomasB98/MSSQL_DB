@@ -79,3 +79,18 @@ WHERE
     Gender ='M'
 GROUP BY 
     Gender;
+
+ALTER TABLE employee.employee_payroll
+ADD 
+    phone_number VARCHAR(50),
+    address VARCHAR(255),
+    department VARCHAR(200) NOT NULL DEFAULT 'Unknown',  -- Apply NOT NULL here
+    CONSTRAINT CK_PhoneNumber CHECK (
+        phone_number LIKE '([0-9][0-9][0-9]) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'
+    );
+
+ALTER TABLE employee.employee_payroll
+ADD CONSTRAINT DF_Address DEFAULT 'Unknown' FOR address;
+
+
+
